@@ -1,32 +1,32 @@
 {
   "version": "PORTFOLIO-V1.0",
-  "dashboardVersion": "1.1.0",
-  "updatedAt": "2026-07-13T20:59:06+08:00",
+  "dashboardVersion": "1.1.1",
+  "updatedAt": "2026-07-13T21:16:29+08:00",
   "truth": {
     "code": "NO_VALIDATED_PORTFOLIO / NOT_ELIGIBLE / NOT_DEPLOYABLE",
     "display": "未验证 · 未达标 · 不可部署"
   },
   "summary": {
-    "overallProgress": 37,
+    "overallProgress": 38,
     "completed": 3,
     "total": 9,
     "currentStage": "生产评估器",
-    "currentStageDetail": "Ready6D4：实现与合成测试进行中",
+    "currentStageDetail": "Ready6D5：NAV 时间覆盖与排序设计中",
     "liveStatus": "冻结",
     "liveReason": "离线资格未通过；API 密钥待轮换"
   },
   "activity": {
-    "observedAt": "2026-07-13T20:59:06+08:00",
-    "lastAccepted": "Ready6D3 · 事件—账本—NAV 链接 PASS",
+    "observedAt": "2026-07-13T21:16:29+08:00",
+    "lastAccepted": "Ready6D4 · Spot/USDT-M NAV 组成复算 PASS",
     "mainline": {
       "status": "active",
-      "title": "Ready6D4 正在实现",
-      "detail": "主执行任务已有连续实现推理，当前不是空闲或假运行。"
+      "title": "Ready6D5 正在设计",
+      "detail": "D4 修复并终审通过后，主执行已收到下一安全切片。"
     },
     "supervision": {
       "status": "pending",
-      "title": "等待真实产物",
-      "detail": "D4 完成后才启动只读独立验收，不提前放行。"
+      "title": "等待 D5 真实产物",
+      "detail": "D4 已独立验收；D5 仍按产出后再监督的顺序推进。"
     },
     "milestone": {
       "status": "pending",
@@ -36,9 +36,9 @@
   },
   "focus": {
     "status": "active",
-    "title": "实现并验收 NAV 组成复算切片",
-    "detail": "Ready6D4 的只读设计已经完成，主执行任务正在实现 Spot 与 USDT-M 的 Decimal50 NAV 组成复算和纯合成测试。它不读取账户、日志、数据库或策略结果，也仍然不是收益、资格或实盘证明。",
-    "nextGate": "Ready6D4 实现、合成测试和独立监督全部 PASS"
+    "title": "设计 NAV 时间覆盖与确定性排序切片",
+    "detail": "Ready6D4 已通过 44 项合成测试和独立终审；Ready6D5 开始冻结 FINAL_HOLDOUT 边界、UTC 整点 mark 与事件后 NAV 的覆盖规则。它仍不读取账户、日志、数据库或策略结果，也不是收益、资格或实盘证明。",
+    "nextGate": "Ready6D5 设计、实现、合成测试和独立监督全部 PASS"
   },
   "milestones": [
     {
@@ -65,9 +65,9 @@
     {
       "id": "production-evaluator",
       "title": "生产数值评估器",
-      "detail": "确定性、估值和事件链接切片已通过；正在推进 NAV 数学，完整指标与归因仍未实现。",
+      "detail": "确定性、估值、事件链接和 NAV 组成复算已通过；正在推进时间覆盖与排序，完整指标与归因仍未实现。",
       "status": "active",
-      "progress": 35
+      "progress": 45
     },
     {
       "id": "candidate-preregistration",
@@ -114,6 +114,10 @@
     "禁止借币、信用贷款、自动借款和外部入金"
   ],
   "history": [
+    {
+      "at": "2026-07-13T21:16:29+08:00",
+      "detail": "Ready6D4 修复资产与交易对错配缺口后通过独立终审；Ready6D5 已启动。"
+    },
     {
       "at": "2026-07-13T20:56:56+08:00",
       "detail": "Ready6D4 已从设计切换到实现阶段；主执行任务正在工作。"
