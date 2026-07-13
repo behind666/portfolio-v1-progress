@@ -57,6 +57,49 @@
         </article>
       </section>
 
+      <section class="panel pulse-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">DELIVERY FLOW</p>
+            <h2>现在有没有真的在推进</h2>
+          </div>
+          <span id="activity-age" class="refresh-note">读取最新活动…</span>
+        </div>
+        <div class="delivery-flow" aria-label="主线交付链路">
+          <article id="flow-mainline" class="flow-step">
+            <span class="flow-number">1</span>
+            <div>
+              <span class="flow-label">主执行</span>
+              <strong id="flow-mainline-title">读取中</strong>
+              <small id="flow-mainline-detail">—</small>
+            </div>
+          </article>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <article id="flow-supervision" class="flow-step">
+            <span class="flow-number">2</span>
+            <div>
+              <span class="flow-label">独立监督</span>
+              <strong id="flow-supervision-title">读取中</strong>
+              <small id="flow-supervision-detail">—</small>
+            </div>
+          </article>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <article id="flow-milestone" class="flow-step">
+            <span class="flow-number">3</span>
+            <div>
+              <span class="flow-label">大节点更新</span>
+              <strong id="flow-milestone-title">读取中</strong>
+              <small id="flow-milestone-detail">—</small>
+            </div>
+          </article>
+        </div>
+        <div class="boundary-strip">
+          <span class="boundary-item boundary-safe">离线研发：正常继续</span>
+          <span class="boundary-item boundary-frozen">私有 API / 实盘：安全冻结</span>
+          <span id="last-accepted" class="boundary-proof">最近可信验收：—</span>
+        </div>
+      </section>
+
       <section class="panel focus-panel">
         <div class="panel-heading">
           <div>

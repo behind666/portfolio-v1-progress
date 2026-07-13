@@ -1,6 +1,7 @@
 {
   "version": "PORTFOLIO-V1.0",
-  "updatedAt": "2026-07-13T20:46:40+08:00",
+  "dashboardVersion": "1.1.0",
+  "updatedAt": "2026-07-13T20:59:06+08:00",
   "truth": {
     "code": "NO_VALIDATED_PORTFOLIO / NOT_ELIGIBLE / NOT_DEPLOYABLE",
     "display": "未验证 · 未达标 · 不可部署"
@@ -10,14 +11,33 @@
     "completed": 3,
     "total": 9,
     "currentStage": "生产评估器",
-    "currentStageDetail": "Ready6D4：NAV 组成复算",
+    "currentStageDetail": "Ready6D4：实现与合成测试进行中",
     "liveStatus": "冻结",
     "liveReason": "离线资格未通过；API 密钥待轮换"
+  },
+  "activity": {
+    "observedAt": "2026-07-13T20:59:06+08:00",
+    "lastAccepted": "Ready6D3 · 事件—账本—NAV 链接 PASS",
+    "mainline": {
+      "status": "active",
+      "title": "Ready6D4 正在实现",
+      "detail": "主执行任务已有连续实现推理，当前不是空闲或假运行。"
+    },
+    "supervision": {
+      "status": "pending",
+      "title": "等待真实产物",
+      "detail": "D4 完成后才启动只读独立验收，不提前放行。"
+    },
+    "milestone": {
+      "status": "pending",
+      "title": "等待监督 PASS",
+      "detail": "只有验收通过才更新项目状态和大节点进度。"
+    }
   },
   "focus": {
     "status": "active",
     "title": "实现并验收 NAV 组成复算切片",
-    "detail": "Ready6D4 的只读设计已经完成。下一步是在不读取账户、日志、数据库或策略结果的前提下，实现 Spot 与 USDT-M 的 Decimal50 NAV 组成复算，并用纯合成测试独立验收。它仍不是收益、资格或实盘证明。",
+    "detail": "Ready6D4 的只读设计已经完成，主执行任务正在实现 Spot 与 USDT-M 的 Decimal50 NAV 组成复算和纯合成测试。它不读取账户、日志、数据库或策略结果，也仍然不是收益、资格或实盘证明。",
     "nextGate": "Ready6D4 实现、合成测试和独立监督全部 PASS"
   },
   "milestones": [
@@ -94,6 +114,10 @@
     "禁止借币、信用贷款、自动借款和外部入金"
   ],
   "history": [
+    {
+      "at": "2026-07-13T20:56:56+08:00",
+      "detail": "Ready6D4 已从设计切换到实现阶段；主执行任务正在工作。"
+    },
     {
       "at": "2026-07-13T20:42:47+08:00",
       "detail": "Ready6D4 NAV 组成复算完成只读设计；尚未实现或验收。"

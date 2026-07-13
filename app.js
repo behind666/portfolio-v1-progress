@@ -25,6 +25,17 @@ function formatUpdatedAt(value) {
   }).format(date);
 }
 
+function formatRelativeTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "活动时间未知";
+  const minutes = Math.max(0, Math.floor((Date.now() - date.getTime()) / 60_000));
+  if (minutes < 1) return "刚刚核验";
+  if (minutes < 60) return `${minutes} 分钟前核验`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours} 小时前核验`;
+  return `${Math.floor(hours / 24)} 天前核验`;
+}
+
 function makePill(status) {
   const pill = document.createElement("span");
   pill.className = `status-pill status-${status}`;
@@ -88,6 +99,13 @@ function renderHistory(history) {
   });
 }
 
+function renderFlowStep(id, step) {
+  const card = byId(id);
+  card.dataset.status = step.status;
+  byId(`${id}-title`).textContent = step.title;
+  byId(`${id}-detail`).textContent = step.detail;
+}
+
 function render(data) {
   document.title = `${data.version} 大节点进度`;
   byId("title").textContent = `${data.version} 大节点进度`;
@@ -102,6 +120,12 @@ function render(data) {
   byId("current-stage-detail").textContent = data.summary.currentStageDetail;
   byId("live-status").textContent = data.summary.liveStatus;
   byId("live-reason").textContent = data.summary.liveReason;
+
+  byId("activity-age").textContent = formatRelativeTime(data.activity.observedAt);
+  renderFlowStep("flow-mainline", data.activity.mainline);
+  renderFlowStep("flow-supervision", data.activity.supervision);
+  renderFlowStep("flow-milestone", data.activity.milestone);
+  byId("last-accepted").textContent = `最近可信验收：${data.activity.lastAccepted}`;
 
   byId("focus-title").textContent = data.focus.title;
   byId("focus-detail").textContent = data.focus.detail;
