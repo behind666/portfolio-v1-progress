@@ -1,44 +1,44 @@
 {
   "version": "PORTFOLIO-V1.0",
-  "dashboardVersion": "1.1.4",
-  "updatedAt": "2026-07-13T23:24:56+08:00",
+  "dashboardVersion": "1.1.5",
+  "updatedAt": "2026-07-14T00:16:49+08:00",
   "truth": {
     "code": "NO_VALIDATED_PORTFOLIO / NOT_ELIGIBLE / NOT_DEPLOYABLE",
     "display": "未验证 · 未达标 · 不可部署"
   },
   "summary": {
-    "overallProgress": 42,
+    "overallProgress": 43,
     "completed": 3,
     "total": 9,
     "currentStage": "生产评估器",
-    "currentStageDetail": "Ready6D8：成本与逐策略 PnL 守恒设计中",
+    "currentStageDetail": "Ready6D8S 契约已验收；成本/PnL 复算器开始实现",
     "liveStatus": "冻结",
     "liveReason": "离线资格未通过；API 密钥待轮换"
   },
   "activity": {
-    "observedAt": "2026-07-13T23:24:56+08:00",
-    "lastAccepted": "Ready6D7 · 完成交易生命周期重建组件 PASS",
+    "observedAt": "2026-07-14T00:16:49+08:00",
+    "lastAccepted": "Ready6D8S · 成本/PnL 结构契约 PASS_NO_P0_P1",
     "mainline": {
       "status": "active",
-      "title": "Ready6D8 正在设计",
-      "detail": "D7 修复部分开仓复活、同毫秒排序及证据链缺口后通过 64 项合成测试与独立终审；主执行正在冻结成本/PnL 守恒规则。"
+      "title": "Ready6D8 复算器开始实现",
+      "detail": "D8 初版因可能产生自洽假账在零文件状态停止；D8S 已冻结原子源、清算唯一表示、七类成本和三路径守恒，现进入生产复算器实现。"
     },
     "supervision": {
-      "status": "active",
-      "title": "D7 已验收，监督 D8",
-      "detail": "D7 产物和验证记录均已独立复核；D8 继续按设计、实现、测试、独立监督的顺序推进。"
+      "status": "completed",
+      "title": "D8S 独立终审通过",
+      "detail": "审核先发现 authorization 安全字段不完整；修复并补反例后，JSON、Draft 2020-12、编译和 78 项测试通过，终审为 PASS_NO_P0_P1。"
     },
     "milestone": {
       "status": "completed",
-      "title": "Ready6D7 已归档",
-      "detail": "终审为 PASS_NO_P0_P1；整体仍未达到盈利、资格或部署门槛。"
+      "title": "Ready6D8S 已归档",
+      "detail": "只完成结构契约；生产成本/PnL 复算、盈利、资格和部署仍未证明。"
     }
   },
   "focus": {
     "status": "active",
-    "title": "设计成本与逐策略 PnL 守恒切片",
-    "detail": "Ready6D7 已通过 64 项合成测试和独立终审；Ready6D8 开始冻结手续费、点差、滑点、冲击、资金费、失败平腿与清算成本的直接归属和守恒。它仍只使用合成输入，不是盈利、资格或实盘证明。",
-    "nextGate": "Ready6D8 设计、实现、合成测试和独立监督全部 PASS"
+    "title": "实现成本与逐策略 PnL 复算器",
+    "detail": "Ready6D8S 已通过 78 项结构/契约测试和独立终审；下一步从显式原子源重算 ledger、七类成本与现金化逐策略 NAV，并交叉证明守恒。它仍只使用合成输入，不是盈利、资格或实盘证明。",
+    "nextGate": "Ready6D8 生产复算器实现、定向合成测试和独立终审全部 PASS"
   },
   "milestones": [
     {
@@ -65,9 +65,9 @@
     {
       "id": "production-evaluator",
       "title": "生产数值评估器",
-      "detail": "确定性、估值、事件链接、NAV 组成、时间覆盖、组合指标和完成交易组件已通过；正在推进成本/PnL 与逐策略守恒，反事实归因仍未实现。",
+      "detail": "确定性、估值、事件链接、NAV、指标和完成交易组件已通过；成本/PnL 契约已验收，生产复算器与反事实归因仍未实现。",
       "status": "active",
-      "progress": 75
+      "progress": 78
     },
     {
       "id": "candidate-preregistration",
@@ -114,6 +114,10 @@
     "禁止借币、信用贷款、自动借款和外部入金"
   ],
   "history": [
+    {
+      "at": "2026-07-14T00:16:49+08:00",
+      "detail": "Ready6D8 初版因五个 P0 会计口径缺口在零文件状态停止；D8S 补齐 spread、清算唯一表示、权威原子源、现金化逐策略 NAV 与完整安全授权，修复终审发现后通过 78 项测试和 PASS_NO_P0_P1。"
+    },
     {
       "at": "2026-07-13T23:24:56+08:00",
       "detail": "Ready6D7 修复部分开仓补单复活、同毫秒成交排序和 intent/SHA/D3 链接缺口后，通过 64 项合成测试、独立终审与验证归档复核；Ready6D8 已启动。"
