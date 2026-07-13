@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="PORTFOLIO-V1 自动交易系统大节点进度看板"
+    />
+    <title>PORTFOLIO-V1 大节点进度</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">BINANCE ONLY · EXECUTIVE VIEW</p>
+          <h1 id="title">PORTFOLIO-V1 大节点进度</h1>
+          <p class="subtitle">
+            只展示会改变项目阶段的里程碑。底层测试、代码行数和进程存活不计作业务成功。
+          </p>
+        </div>
+        <div class="truth-card" aria-live="polite">
+          <span class="truth-label">当前事实</span>
+          <strong id="truth-status">读取中…</strong>
+          <span id="updated-at">正在获取最新进度</span>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="进度摘要">
+        <article class="metric-card metric-primary">
+          <span>大节点工程进度</span>
+          <strong id="overall-progress">--%</strong>
+          <div class="progress-track" aria-hidden="true">
+            <div id="overall-progress-bar" class="progress-fill"></div>
+          </div>
+          <small>不是盈利概率，也不是实盘资格</small>
+        </article>
+        <article class="metric-card">
+          <span>已完成大节点</span>
+          <strong id="completed-count">-- / --</strong>
+          <small>只按预先固定的大门槛计数</small>
+        </article>
+        <article class="metric-card">
+          <span>当前主攻</span>
+          <strong id="current-stage">读取中</strong>
+          <small id="current-stage-detail">—</small>
+        </article>
+        <article class="metric-card metric-alert">
+          <span>实盘状态</span>
+          <strong id="live-status">冻结</strong>
+          <small id="live-reason">离线资格未通过</small>
+        </article>
+      </section>
+
+      <section class="panel focus-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">NOW</p>
+            <h2>现在正在推进什么</h2>
+          </div>
+          <span id="focus-badge" class="status-pill status-active">进行中</span>
+        </div>
+        <h3 id="focus-title">读取中…</h3>
+        <p id="focus-detail" class="focus-copy"></p>
+        <div class="next-gate">
+          <span>下一个可验收结果</span>
+          <strong id="next-gate">—</strong>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ROADMAP</p>
+            <h2>最终需求拆成 9 个大节点</h2>
+          </div>
+          <span class="refresh-note">页面每 60 秒检查一次更新</span>
+        </div>
+        <div id="milestone-list" class="milestone-list"></div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel compact-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">HARD GATES</p>
+              <h2>不可降低的最终门槛</h2>
+            </div>
+          </div>
+          <ul id="requirements-list" class="requirements-list"></ul>
+        </article>
+
+        <article class="panel compact-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">RECENT</p>
+              <h2>最近的大节点记录</h2>
+            </div>
+          </div>
+          <ol id="history-list" class="history-list"></ol>
+        </article>
+      </section>
+
+      <footer>
+        <span id="version">PORTFOLIO-V1.0</span>
+        <span>数据源：脱敏后的项目状态与独立验收结论</span>
+        <span id="refresh-status">等待首次刷新</span>
+      </footer>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

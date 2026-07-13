@@ -1,0 +1,118 @@
+{
+  "version": "PORTFOLIO-V1.0",
+  "updatedAt": "2026-07-13T20:46:40+08:00",
+  "truth": {
+    "code": "NO_VALIDATED_PORTFOLIO / NOT_ELIGIBLE / NOT_DEPLOYABLE",
+    "display": "未验证 · 未达标 · 不可部署"
+  },
+  "summary": {
+    "overallProgress": 37,
+    "completed": 3,
+    "total": 9,
+    "currentStage": "生产评估器",
+    "currentStageDetail": "Ready6D4：NAV 组成复算",
+    "liveStatus": "冻结",
+    "liveReason": "离线资格未通过；API 密钥待轮换"
+  },
+  "focus": {
+    "status": "active",
+    "title": "实现并验收 NAV 组成复算切片",
+    "detail": "Ready6D4 的只读设计已经完成。下一步是在不读取账户、日志、数据库或策略结果的前提下，实现 Spot 与 USDT-M 的 Decimal50 NAV 组成复算，并用纯合成测试独立验收。它仍不是收益、资格或实盘证明。",
+    "nextGate": "Ready6D4 实现、合成测试和独立监督全部 PASS"
+  },
+  "milestones": [
+    {
+      "id": "goal-contract",
+      "title": "目标与风控合同冻结",
+      "detail": "Binance-only、30–60 分钟机会节奏、多空多币、最高 10x、200 RMB 启动资金和禁止借款已固定。",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "reuse-governance",
+      "title": "旧资产复用与候选治理",
+      "detail": "已有采集、回放、成交模拟和安全链已完成复用审计；旧失败策略不能换名冒充新候选。",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "evidence-contract",
+      "title": "统一证据标准与 Schema",
+      "detail": "数据身份、切分、逐事件会计、指标口径和 fail-closed 授权结构已经冻结并独立验收。",
+      "status": "completed",
+      "progress": 100
+    },
+    {
+      "id": "production-evaluator",
+      "title": "生产数值评估器",
+      "detail": "确定性、估值和事件链接切片已通过；正在推进 NAV 数学，完整指标与归因仍未实现。",
+      "status": "active",
+      "progress": 35
+    },
+    {
+      "id": "candidate-preregistration",
+      "title": "策略候选发现与结果盲预注册",
+      "detail": "等待生产评估器具备可信复算能力；当前没有通过验证的策略候选。",
+      "status": "pending",
+      "progress": 0
+    },
+    {
+      "id": "train-validation",
+      "title": "训练与独立验证",
+      "detail": "每条经济来源不同的子策略先过 train，再过锁定的 validation；失败版本保留，不降门槛。",
+      "status": "pending",
+      "progress": 0
+    },
+    {
+      "id": "final-holdout",
+      "title": "最后 6 个月未见样本考试",
+      "detail": "至少 2 年总历史、最后 6 个月完全不调参，样本外完成交易不少于 100 笔。",
+      "status": "pending",
+      "progress": 0
+    },
+    {
+      "id": "portfolio-eligibility",
+      "title": "组合回放、归因与资格门",
+      "detail": "组合扣除全部成本后必须同时满足年化、Sharpe、回撤及子策略边际贡献要求。",
+      "status": "pending",
+      "progress": 0
+    },
+    {
+      "id": "live-deployment",
+      "title": "账户安全复核与自动实盘",
+      "detail": "只有同版本不可变资格证据和最新安全检查全部通过才可部署；当前 API 密钥轮换也是前置条件。",
+      "status": "blocked",
+      "progress": 0
+    }
+  ],
+  "requirements": [
+    "只使用 Binance 数据，只在 Binance Spot 与 USDT-M 交易",
+    "样本外年化收益率 > 100%，Sharpe > 3.0，最大回撤 ≤ 20%",
+    "至少 2 年历史，最后 6 个月完全未见，样本外完成交易 ≥ 100 笔",
+    "计入手续费、点差、滑点、资金费、延迟、部分成交、拒单和执行失败",
+    "每条子策略样本外扣费后净正，并提高组合收益或降低风险",
+    "禁止借币、信用贷款、自动借款和外部入金"
+  ],
+  "history": [
+    {
+      "at": "2026-07-13T20:42:47+08:00",
+      "detail": "Ready6D4 NAV 组成复算完成只读设计；尚未实现或验收。"
+    },
+    {
+      "at": "2026-07-13T20:39:30+08:00",
+      "detail": "Ready6D3 事件—账本—NAV 链接切片通过独立监督。"
+    },
+    {
+      "at": "2026-07-13T20:30:32+08:00",
+      "detail": "Ready6D2 Binance as-of 估值切片通过独立监督。"
+    },
+    {
+      "at": "2026-07-13T20:17:00+08:00",
+      "detail": "Ready6D1 确定性内核修正类型缺陷后通过终审。"
+    },
+    {
+      "at": "2026-07-13T18:30:00+08:00",
+      "detail": "统一证据 Schema 与指标复算规格完成冻结。"
+    }
+  ]
+}
