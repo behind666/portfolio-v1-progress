@@ -1,7 +1,7 @@
 {
   "version": "PORTFOLIO-V1.0",
-  "dashboardVersion": "1.1.8",
-  "updatedAt": "2026-07-14T02:15:11+08:00",
+  "dashboardVersion": "1.1.9",
+  "updatedAt": "2026-07-14T10:30:50+08:00",
   "truth": {
     "code": "NO_VALIDATED_PORTFOLIO / NOT_ELIGIBLE / NOT_DEPLOYABLE",
     "display": "未验证 · 未达标 · 不可部署"
@@ -10,35 +10,35 @@
     "overallProgress": 46,
     "completed": 3,
     "total": 9,
-    "currentStage": "Ready6E-E0 契约设计",
-    "currentStageDetail": "聚合缺口审计已完成；先冻结权威 bundle、唯一输入输出和 12 项检查状态机",
+    "currentStage": "S2 数据源优先候选筛选",
+    "currentStageDetail": "阶段复盘已通过；继承 S1 冻结缺口，结果盲筛最多三个经济机制，不重复造基础设施",
     "liveStatus": "冻结",
     "liveReason": "离线资格未通过；API 密钥待轮换"
   },
   "activity": {
-    "observedAt": "2026-07-14T02:15:11+08:00",
-    "lastAccepted": "Ready6E · 聚合缺口审计与 V0.2.2 独立记录 PASS_NO_P0_P1",
+    "observedAt": "2026-07-14T10:30:50+08:00",
+    "lastAccepted": "阶段复盘与 V2 交接终审 PASS_NO_P0_P1；S-ADBETA 在 S1 数据源门正确关闭",
     "mainline": {
       "status": "active",
-      "title": "Ready6E-E0 权威 bundle / 聚合契约设计",
-      "detail": "冻结 Ready6B/6C、D1-D8、Python/Decimal 和代码/Schema SHA，定义唯一输入 bytes、投影清单、组件输出 SHA 与 canonical report。"
+      "title": "S2 · 数据源可行性优先筛选",
+      "detail": "继承 S1 已证明的 point-in-time filters、公开费率和因果盘口缺口；最多筛三个不同机制，命中共性阻塞即关闭。"
     },
     "supervision": {
       "status": "completed",
-      "title": "12 项聚合检查缺口已独立复核",
-      "detail": "确认仍缺同句柄物理身份、完整输入覆盖、跨组件投影、FULL/WITHOUT、episode/cadence 和最终门槛，不能直接拼 PASS。"
+      "title": "阶段复盘与 V2 交接已独立终审",
+      "detail": "终审关闭重复 S1 source gate 的风险，确认不得继续 E0、直接训练或自动改变数据政策。"
     },
     "milestone": {
       "status": "completed",
-      "title": "Ready6E 路线已纠偏为 E0–E5",
-      "detail": "当前只做 E0 契约；后续依次是不可变 reader、投影桥、机会节奏、反事实和最终门，不读取 FINAL_HOLDOUT。"
+      "title": "策略主线已从基础设施施工纠偏",
+      "detail": "S-ADBETA 只通过结果盲预注册，随后因官方公共历史来源不足关闭；训练从未启动。"
     }
   },
   "focus": {
     "status": "active",
-    "title": "冻结 E0 Authority Bundle 与聚合状态机",
-    "detail": "D1-D8 是可复用组件，不是完整 evaluator。E0 只定义同版本权威 SHA、唯一输入输出、12-check 状态一致性和九项授权 false。",
-    "nextGate": "E0 契约、Schema、合成反例和独立审查全部 PASS 后，才允许实现 E1 reader"
+    "title": "先证明候选的数据账单可落地",
+    "detail": "D1-D8 保留为以后按需复用资产，E0-E5 暂停。当前只判断机制是否拥有两年历史、点时规则、费用和真实执行证据。",
+    "nextGate": "只有一名候选的完整来源先 PASS，才允许进入正式结果盲 S0 预注册；零候选则提交数据政策二选一"
   },
   "milestones": [
     {
@@ -65,16 +65,16 @@
     {
       "id": "production-evaluator",
       "title": "生产数值评估器",
-      "detail": "确定性、估值、事件链接、NAV、指标、完成交易和成本/PnL 守恒组件已通过；聚合执行、生产证据绑定与反事实归因仍未实现。",
-      "status": "active",
+      "detail": "D1-D8 可复用组件已通过；聚合执行、生产证据绑定与反事实归因暂停，等待合格候选产生具体需要。",
+      "status": "pending",
       "progress": 90
     },
     {
       "id": "candidate-preregistration",
       "title": "策略候选发现与结果盲预注册",
-      "detail": "等待生产评估器具备可信复算能力；当前没有通过验证的策略候选。",
-      "status": "pending",
-      "progress": 0
+      "detail": "S-ADBETA 已在预训练数据门关闭；S2 正按来源可行性筛最多三个不同经济机制。",
+      "status": "active",
+      "progress": 10
     },
     {
       "id": "train-validation",
@@ -114,6 +114,10 @@
     "禁止借币、信用贷款、自动借款和外部入金"
   ],
   "history": [
+    {
+      "at": "2026-07-14T10:30:50+08:00",
+      "detail": "阶段复盘确认此前在无可训练候选时继续 E0 属优先级偏离；E0-E5 已暂停。S-ADBETA 的 S0 规则闭合，但 S1 官方公共历史门因点时过滤器、公开费率和因果盘口来源不足而关闭，未训练。V2 交接终审通过，新任务已启动 S2 source-first screen。"
+    },
     {
       "at": "2026-07-14T02:15:11+08:00",
       "detail": "Ready6E 聚合缺口审计确认 D1-D8 不能直接拼成资格 PASS；V0.2.2 缺失的独立记录已补齐。路线纠偏为 E0 权威 bundle、E1 reader、E2 投影桥、E3 opportunity、E4 counterfactual、E5 gates，当前只进入 E0。"
